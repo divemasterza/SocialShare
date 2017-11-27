@@ -6,8 +6,8 @@ function bigambitions_social_sharing_buttons($content) {
 		$bigambitionsURL = urlencode(get_permalink());
  $bigambitionsTitle = str_replace( ' ', '%20', get_the_title());
 		
-		// Thumb for pinterest
-		$bigambitionsThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+		
+		
  
 		// Build the url
 		$twitterURL = 'https://twitter.com/intent/tweet?text='.$bigambitionsTitle.'&amp;url='.$bigambitionsURL.'&amp;via=bigambitions';
@@ -15,6 +15,8 @@ function bigambitions_social_sharing_buttons($content) {
 		$googleURL = 'https://plus.google.com/share?url='.$bigambitionsURL;
 		$whatsappURL = 'whatsapp://send?text='.$bigambitionsTitle . ' ' . $bigambitionsURL;
 		$linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url='.$bigambitionsURL.'&amp;title='.$bigambitionsTitle;
+                // Thumb for pinterest
+                $bigambitionsThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 		$pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$bigambitionsURL.'&amp;media='.$bigambitionsThumbnail[0].'&amp;description='.$bigambitionsTitle;
 		$content .= '<div class="bigambitions-social">';
 		$content .= '<h5>SHARE ON</h5> <a class="bigambitions-link bigambitions-twitter" href="'. $twitterURL .'" target="_blank">Twitter</a>';
